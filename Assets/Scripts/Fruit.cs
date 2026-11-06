@@ -1,7 +1,17 @@
+using System;
 using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
+    
+    
+    
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
