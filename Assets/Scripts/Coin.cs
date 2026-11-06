@@ -1,19 +1,24 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
 
-
+    public CoinManager coinManager;
+    public int value;
     public AudioClip audioSource;
     
     
     public void OnTriggerEnter2D(Collider2D other)
     {
+        coinManager.ChangeCoins(value);
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(audioSource, transform.position);
+            
+            
         }
         
     }
