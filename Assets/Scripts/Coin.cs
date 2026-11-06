@@ -3,14 +3,19 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+
+
+    public AudioClip audioSource;
     
     
-    
-    
-    public void OnCollisionEnter2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(audioSource, transform.position);
+        }
+        
     }
 
 
