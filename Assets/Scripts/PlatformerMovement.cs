@@ -23,7 +23,7 @@ public class PlatformerMovement : MonoBehaviour
     private Rigidbody2D rb;
     
     // Platformer specific variables
-    private CircleCollider2D groundCheckCollider;
+    [SerializeField] private CircleCollider2D groundCheckCollider;
     private LayerMask groundLayer = ~0; // ~0 is referring to EVERY layer. Do you want a specific layer? Serialize the variable and assign the Layer of your choice.
     private Vector2 velocity;
     private bool jumpInput;
