@@ -60,6 +60,7 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             if (velocity.y < 0)
             {
                 // Has fallen. Play fall sound and/or trigger fall animation etc
+                animator.SetTrigger("Jump");
             }
             else
             {
