@@ -41,7 +41,7 @@ public class CustomizablePlatformerMovement : MonoBehaviour
     {
         //---Handle vertical velocity---
         
-        animator.SetFloat("Run");
+        animator.SetFloat("Run", Mathf.Abs(moveInput.x));
         
         isGrounded = IsGrounded();
         ApplyGravity();
@@ -49,6 +49,7 @@ public class CustomizablePlatformerMovement : MonoBehaviour
         // Apply jump-input:
         if (jumpInput && wasGrounded)
         {
+           
             velocity.y = jumpForce;
             jumpInput = false;
         }
@@ -63,6 +64,7 @@ public class CustomizablePlatformerMovement : MonoBehaviour
             else
             {
                 // Has jumped. Play jump sound and/or trigger jump animation etc
+                animator.SetTrigger("Jump");
             }
         }
         // Check if character gained contact with ground this frame
