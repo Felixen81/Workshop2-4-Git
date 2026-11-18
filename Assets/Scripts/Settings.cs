@@ -20,8 +20,8 @@ public class Settings : MonoBehaviour
     {
         
         
-        
     }
+    
     
     void Start()
     {
