@@ -8,6 +8,7 @@ public class Coin : MonoBehaviour
     public CoinManager coinManager;
     public int value;
     public AudioClip audioSource;
+    public ParticleSystem particleSystem;
     
     
     public void OnTriggerEnter2D(Collider2D other)
@@ -17,8 +18,10 @@ public class Coin : MonoBehaviour
         {
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(audioSource, transform.position);
-            
-            
+            particleSystem.transform.parent = null;
+            particleSystem.Play();
+
+
         }
         
     }
